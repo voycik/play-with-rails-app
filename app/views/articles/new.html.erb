@@ -3,6 +3,15 @@
 <div class='row'>
   <div class='col-md-12'>
     <%= form_for(@article, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+      <% if @article.errors.any?%>
+        <ul>
+          <% @article.errors.full_messages.each do |msg| %>
+            <li>
+              <%=msg%>
+            </li>
+          <%end%>
+      <%end%>
+
       <div class='form-group'>
         <div class='control-label col-md-1'>
           <%= f.label :title %>
