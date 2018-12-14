@@ -21,6 +21,22 @@ class ArticlesController < ApplicationController
       render :new
     end
   end
+
+  def edit
+    @article = Article.find(params[:id])
+  end
+
+  def update
+    @article = Article.find(params[:id])
+    if @article.update(article_params)
+      flash[:succes] = "Article has been updated"
+      redirect_to @article
+    else
+      flash.now[:danger] = "Article has not been updated"
+      render :edit
+    end
+  end
+
   protected
     def resource_not_found
       message = "The article you are looking for could not be found"

@@ -5,7 +5,9 @@
   <div class="glyphicon glyphicon-calendar" id="article-date">
     <%= @article.created_at.strftime("%b %d, %Y") %>
   </div>
-  <div class="article-body"> 
+  <div class="article-body">
     <%= @article.body %>
   </div>
+
+  <%=link_to "Edit article", edit_article_path(@article), class: "btn btn-primary btn-lg btn-space" %>
 </article>
