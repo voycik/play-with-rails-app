@@ -8,6 +8,9 @@
   <div class="article-body">
     <%= @article.body %>
   </div>
-
-  <%=link_to "Edit article", edit_article_path(@article), class: "btn btn-primary btn-lg btn-space" %>
+  <div  class="edit-delete">
+    <%=link_to "Edit article", edit_article_path(@article), class: "btn btn-primary btn-lg btn-space" %>
+    <%=link_to "Delete Article", article_path(@article), method: :delete,
+    data: { confirm: "Are you sure?" }, class: "btn btn-primary btn-lg btn-space" %>
+  </div>
 </article>
