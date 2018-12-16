@@ -1,5 +1,6 @@
-Rails.application.routes.draw do
+# frozen_string_literal: true
 
-  root to: "articles#index"
+Rails.application.routes.draw do
+  root to: 'articles#index'
   resources :articles
 end
