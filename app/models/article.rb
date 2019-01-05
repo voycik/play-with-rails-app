@@ -5,4 +5,6 @@ class Article < ApplicationRecord
   validates :body, presence: true
 
   default_scope { order(created_at: :desc) }
+
+  belongs_to :user
 end
