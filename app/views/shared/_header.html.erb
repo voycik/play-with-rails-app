@@ -11,9 +11,11 @@ data-target="#bs-example-navbar-collapse-1">
        <%= link_to "Blog App", root_path, class: "navbar-brand" %>
       </div>
     <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><%= link_to "New article", new_article_path %></li>
-      </ul>
+      <% if user_signed_in? %>
+        <ul class="nav navbar-nav">
+          <li class="active"><%= link_to "New article", new_article_path %></li>
+        </ul>
+      <%end%>
       <ul class="nav navbar-nav navbar-right">
         <li class="active"><%= link_to "Authors", "#" %></li>
         <%if user_signed_in? %>
@@ -26,7 +28,7 @@ data-target="#bs-example-navbar-collapse-1">
           <li><%= link_to 'Sign in', new_user_session_path %></li>
         <%end%>
 
-      
+
       </ul>
     </div>
   </div>
